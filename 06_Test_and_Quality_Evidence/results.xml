@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="104" failures="0" disabled="0" errors="0" time="0.65" timestamp="2026-10-30T05:41:24.653" name="AllTests">
+  <testsuite name="Penalty" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-10-30T05:41:24.653">
+    <testcase name="BoundaryValuesForDeadlineAndDays" file="/tmp/v11/tests/test_penalty_domain.cpp" line="9" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.653" classname="Penalty" />
+    <testcase name="MarkBoundariesAndFloorAtZero" file="/tmp/v11/tests/test_penalty_domain.cpp" line="25" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Penalty" />
+    <testcase name="RoundsHalfUpToTwoDecimals" file="/tmp/v11/tests/test_penalty_domain.cpp" line="34" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Penalty" />
+    <testcase name="PolicyIsReplaceable" file="/tmp/v11/tests/test_penalty_domain.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Penalty" />
+  </testsuite>
+  <testsuite name="Domain" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-10-30T05:41:24.654">
+    <testcase name="PermissionMatrixPerRole" file="/tmp/v11/tests/test_penalty_domain.cpp" line="48" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Domain" />
+    <testcase name="UserFactoryBuildsEachRoleAndValidates" file="/tmp/v11/tests/test_penalty_domain.cpp" line="70" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Domain" />
+    <testcase name="EnumerationsRoundTripThroughText" file="/tmp/v11/tests/test_penalty_domain.cpp" line="82" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Domain" />
+    <testcase name="EffectiveDeadlineAndCurrentVersion" file="/tmp/v11/tests/test_penalty_domain.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Domain" />
+  </testsuite>
+  <testsuite name="Common" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-10-30T05:41:24.654">
+    <testcase name="TimeConversionAndTrim" file="/tmp/v11/tests/test_penalty_domain.cpp" line="106" status="run" result="completed" time="0." timestamp="2026-10-30T05:41:24.654" classname="Common" />
+  </testsuite>
+  <testsuite name="Data" tests="9" failures="0" disabled="0" skipped="0" errors="0" time="0.027" timestamp="2026-10-30T05:41:24.654">
+    <testcase name="ForeignKeysAreEnforced" file="/tmp/v11/tests/test_data.cpp" line="6" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.654" classname="Data" />
+    <testcase name="AuditLogIsAppendOnly" file="/tmp/v11/tests/test_data.cpp" line="11" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:24.656" classname="Data" />
+    <testcase name="ConstraintsRejectInvalidRows" file="/tmp/v11/tests/test_data.cpp" line="21" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:24.660" classname="Data" />
+    <testcase name="QueriesAreParameterisedAgainstInjection" file="/tmp/v11/tests/test_data.cpp" line="33" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.663" classname="Data" />
+    <testcase name="UnitOfWorkRollsBackAndCommitsAndNests" file="/tmp/v11/tests/test_data.cpp" line="44" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.665" classname="Data" />
+    <testcase name="RepositoriesRoundTripEntities" file="/tmp/v11/tests/test_data.cpp" line="60" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.667" classname="Data" />
+    <testcase name="ExtensionIsUpsertedPerStudentAndAssignment" file="/tmp/v11/tests/test_data.cpp" line="86" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.670" classname="Data" />
+    <testcase name="AuditFilterByDepartmentUserAndTime" file="/tmp/v11/tests/test_data.cpp" line="98" status="run" result="completed" time="0.004" timestamp="2026-10-30T05:41:24.673" classname="Data" />
+    <testcase name="BackupCreatesAnOpenableCopy" file="/tmp/v11/tests/test_data.cpp" line="111" status="run" result="completed" time="0.004" timestamp="2026-10-30T05:41:24.677" classname="Data" />
+  </testsuite>
+  <testsuite name="Auth" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0.02" timestamp="2026-10-30T05:41:24.682">
+    <testcase name="LoginSucceedsAndIsCaseInsensitiveOnUsername" file="/tmp/v11/tests/test_auth_admin.cpp" line="6" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.682" classname="Auth" />
+    <testcase name="WrongPasswordAndUnknownUserGiveTheSameMessage" file="/tmp/v11/tests/test_auth_admin.cpp" line="11" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:24.684" classname="Auth" />
+    <testcase name="DeactivatedAccountCannotLogIn" file="/tmp/v11/tests/test_auth_admin.cpp" line="20" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:24.687" classname="Auth" />
+    <testcase name="AccountLocksAfterFiveFailuresAndUnlocksAfterFiveMinutes" file="/tmp/v11/tests/test_auth_admin.cpp" line="28" status="run" result="completed" time="0.004" timestamp="2026-10-30T05:41:24.691" classname="Auth" />
+    <testcase name="SuccessfulLoginResetsTheFailureCounter" file="/tmp/v11/tests/test_auth_admin.cpp" line="38" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:24.695" classname="Auth" />
+    <testcase name="PasswordsAreStoredAsSaltedHashesOnly" file="/tmp/v11/tests/test_auth_admin.cpp" line="47" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.698" classname="Auth" />
+    <testcase name="ChangePasswordChecksOldPasswordAndRules" file="/tmp/v11/tests/test_auth_admin.cpp" line="57" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.700" classname="Auth" />
+  </testsuite>
+  <testsuite name="Admin" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.006" timestamp="2026-10-30T05:41:24.702">
+    <testcase name="CreateUserValidatesEveryField" file="/tmp/v11/tests/test_auth_admin.cpp" line="68" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.702" classname="Admin" />
+    <testcase name="HeadOfDepartmentRules" file="/tmp/v11/tests/test_auth_admin.cpp" line="83" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.704" classname="Admin" />
+    <testcase name="DepartmentsCoursesEnrolmentsAndAssignments" file="/tmp/v11/tests/test_auth_admin.cpp" line="93" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.706" classname="Admin" />
+  </testsuite>
+  <testsuite name="AssignmentSvc" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.006" timestamp="2026-10-30T05:41:24.708">
+    <testcase name="CreateAssignmentValidation" file="/tmp/v11/tests/test_auth_admin.cpp" line="117" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.708" classname="AssignmentSvc" />
+    <testcase name="ExtensionRules" file="/tmp/v11/tests/test_auth_admin.cpp" line="136" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.710" classname="AssignmentSvc" />
+    <testcase name="ListingsRespectRoles" file="/tmp/v11/tests/test_auth_admin.cpp" line="152" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.713" classname="AssignmentSvc" />
+  </testsuite>
+  <testsuite name="Submission" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0.047" timestamp="2026-10-30T05:41:24.715">
+    <testcase name="OnTimeFirstSubmission" file="/tmp/v11/tests/test_submission_marking.cpp" line="9" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.715" classname="Submission" />
+    <testcase name="DeadlineBoundaries" file="/tmp/v11/tests/test_submission_marking.cpp" line="22" status="run" result="completed" time="0.014" timestamp="2026-10-30T05:41:24.717" classname="Submission" />
+    <testcase name="ResubmissionBeforeDeadlineKeepsAllVersions" file="/tmp/v11/tests/test_submission_marking.cpp" line="37" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.732" classname="Submission" />
+    <testcase name="CannotResubmitAfterDeadlineOrAfterLateOrAfterMarking" file="/tmp/v11/tests/test_submission_marking.cpp" line="50" status="run" result="completed" time="0.007" timestamp="2026-10-30T05:41:24.734" classname="Submission" />
+    <testcase name="OnlyEnrolledStudentsMaySubmit" file="/tmp/v11/tests/test_submission_marking.cpp" line="67" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.741" classname="Submission" />
+    <testcase name="InvalidFilesAreRejectedAndStoreNothing" file="/tmp/v11/tests/test_submission_marking.cpp" line="75" status="run" result="completed" time="0.013" timestamp="2026-10-30T05:41:24.744" classname="Submission" />
+    <testcase name="ExtensionMovesTheEffectiveDeadline" file="/tmp/v11/tests/test_submission_marking.cpp" line="85" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.757" classname="Submission" />
+    <testcase name="DatabaseFailureLeavesNoPartialSubmission" file="/tmp/v11/tests/test_submission_marking.cpp" line="94" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.760" classname="Submission" />
+  </testsuite>
+  <testsuite name="Marking" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0.024" timestamp="2026-10-30T05:41:24.762">
+    <testcase name="CannotMarkBeforeTheEffectiveDeadline" file="/tmp/v11/tests/test_submission_marking.cpp" line="109" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.762" classname="Marking" />
+    <testcase name="OnTimeMarkHasNoPenaltyAndWritesAnAuditEntry" file="/tmp/v11/tests/test_submission_marking.cpp" line="119" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.765" classname="Marking" />
+    <testcase name="LatePenaltyIsApplied" file="/tmp/v11/tests/test_submission_marking.cpp" line="135" status="run" result="completed" time="0.01" timestamp="2026-10-30T05:41:24.767" classname="Marking" />
+    <testcase name="ExtensionRemovesThePenalty" file="/tmp/v11/tests/test_submission_marking.cpp" line="151" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.777" classname="Marking" />
+    <testcase name="RejectsInvalidMarksFeedbackAndWrongPeople" file="/tmp/v11/tests/test_submission_marking.cpp" line="160" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.779" classname="Marking" />
+    <testcase name="RemarkRequiresReasonAndIsAudited" file="/tmp/v11/tests/test_submission_marking.cpp" line="177" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.782" classname="Marking" />
+    <testcase name="FailedAuditRollsBackTheMark" file="/tmp/v11/tests/test_submission_marking.cpp" line="195" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.785" classname="Marking" />
+  </testsuite>
+  <testsuite name="Moderation" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0.02" timestamp="2026-10-30T05:41:24.787">
+    <testcase name="ReviewIsLimitedToOwnDepartment" file="/tmp/v11/tests/test_moderation.cpp" line="17" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.787" classname="Moderation" />
+    <testcase name="StudentsNeverSeeUnreleasedMarks" file="/tmp/v11/tests/test_moderation.cpp" line="26" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.790" classname="Moderation" />
+    <testcase name="AdjustMarkBeforeApprovalIsAuditedAndValidated" file="/tmp/v11/tests/test_moderation.cpp" line="41" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.792" classname="Moderation" />
+    <testcase name="ApproveAndReleaseBatchesSkipWrongStates" file="/tmp/v11/tests/test_moderation.cpp" line="60" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.795" classname="Moderation" />
+    <testcase name="ReleaseRequiresApprovalFirst" file="/tmp/v11/tests/test_moderation.cpp" line="82" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.798" classname="Moderation" />
+    <testcase name="BatchIsAllOrNothing" file="/tmp/v11/tests/test_moderation.cpp" line="91" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.800" classname="Moderation" />
+    <testcase name="CorrectionOfAReleasedMarkIsAuditedAndVisible" file="/tmp/v11/tests/test_moderation.cpp" line="110" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.802" classname="Moderation" />
+    <testcase name="AuditLogAccessIsRoleBased" file="/tmp/v11/tests/test_moderation.cpp" line="124" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.805" classname="Moderation" />
+  </testsuite>
+  <testsuite name="Robustness" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0.004" timestamp="2026-10-30T05:41:24.807">
+    <testcase name="AtLeastFiftyInvalidInputsAreRejectedCleanly" file="/tmp/v11/tests/test_robustness.cpp" line="9" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:24.807" classname="Robustness" />
+    <testcase name="DatabaseFailureBecomesAnErrorNotACrash" file="/tmp/v11/tests/test_robustness.cpp" line="89" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:24.810" classname="Robustness" />
+  </testsuite>
+  <testsuite name="Performance" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0.216" timestamp="2026-10-30T05:41:24.812">
+    <testcase name="LoginListingAndSavingMeetTheTargetsWithEightHundredStudents" file="/tmp/v11/tests/test_performance.cpp" line="15" status="run" result="completed" time="0.216" timestamp="2026-10-30T05:41:24.812" classname="Performance" />
+  </testsuite>
+  <testsuite name="Console" tests="9" failures="0" disabled="0" skipped="0" errors="0" time="0.021" timestamp="2026-10-30T05:41:25.028">
+    <testcase name="FailedLoginShowsAPlainMessageAndQuitWorks" file="/tmp/v11/tests/test_ui.cpp" line="20" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.028" classname="Console" />
+    <testcase name="StudentSubmitsWork" file="/tmp/v11/tests/test_ui.cpp" line="26" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.030" classname="Console" />
+    <testcase name="LateSubmissionWarnsAboutPenalty" file="/tmp/v11/tests/test_ui.cpp" line="36" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.033" classname="Console" />
+    <testcase name="LecturerMarksAndHodModeratesAndReleases" file="/tmp/v11/tests/test_ui.cpp" line="44" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.036" classname="Console" />
+    <testcase name="StudentSeesNothingBeforeRelease" file="/tmp/v11/tests/test_ui.cpp" line="61" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.039" classname="Console" />
+    <testcase name="AdministratorCreatesAnAccount" file="/tmp/v11/tests/test_ui.cpp" line="69" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.041" classname="Console" />
+    <testcase name="InvalidInputIsExplainedAndDoesNotCrash" file="/tmp/v11/tests/test_ui.cpp" line="77" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.043" classname="Console" />
+    <testcase name="EndOfInputInsideASessionEndsCleanly" file="/tmp/v11/tests/test_ui.cpp" line="84" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.045" classname="Console" />
+    <testcase name="ChangePasswordAndAuditLogScreens" file="/tmp/v11/tests/test_ui.cpp" line="91" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.047" classname="Console" />
+  </testsuite>
+  <testsuite name="UC18" tests="9" failures="0" disabled="0" skipped="0" errors="0" time="0.02" timestamp="2026-10-30T05:41:25.050">
+    <testcase name="Main_OnTimeSubmission" file="/tmp/v11/tests/test_system_usecases.cpp" line="11" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.050" classname="UC18" />
+    <testcase name="A1_ResubmissionBeforeDeadline" file="/tmp/v11/tests/test_system_usecases.cpp" line="17" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.052" classname="UC18" />
+    <testcase name="A2_LateSubmissionIsAcceptedAndFlagged" file="/tmp/v11/tests/test_system_usecases.cpp" line="24" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.055" classname="UC18" />
+    <testcase name="A2_SubmissionAfterSeventyTwoHoursIsStillAccepted" file="/tmp/v11/tests/test_system_usecases.cpp" line="31" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.057" classname="UC18" />
+    <testcase name="E1_StudentNotEnrolled" file="/tmp/v11/tests/test_system_usecases.cpp" line="36" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.059" classname="UC18" />
+    <testcase name="E2_InvalidFile" file="/tmp/v11/tests/test_system_usecases.cpp" line="42" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.061" classname="UC18" />
+    <testcase name="E3_ResubmissionOfLateWorkRefused" file="/tmp/v11/tests/test_system_usecases.cpp" line="47" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.063" classname="UC18" />
+    <testcase name="E4_SubmissionAfterMarkingRefused" file="/tmp/v11/tests/test_system_usecases.cpp" line="53" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.066" classname="UC18" />
+    <testcase name="E5_StorageErrorLeavesNoPartialVersion" file="/tmp/v11/tests/test_system_usecases.cpp" line="58" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.068" classname="UC18" />
+  </testsuite>
+  <testsuite name="UC10" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0.019" timestamp="2026-10-30T05:41:25.071">
+    <testcase name="Main_MarkAfterDeadlineHiddenFromStudent" file="/tmp/v11/tests/test_system_usecases.cpp" line="65" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.071" classname="UC10" />
+    <testcase name="Main_LatePenaltyShownAndApplied" file="/tmp/v11/tests/test_system_usecases.cpp" line="72" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.073" classname="UC10" />
+    <testcase name="A1_RemarkWithReason" file="/tmp/v11/tests/test_system_usecases.cpp" line="82" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.076" classname="UC10" />
+    <testcase name="E1_MarkOutsideRange" file="/tmp/v11/tests/test_system_usecases.cpp" line="88" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.078" classname="UC10" />
+    <testcase name="E2_FeedbackMissing" file="/tmp/v11/tests/test_system_usecases.cpp" line="95" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.080" classname="UC10" />
+    <testcase name="E3_DeadlineNotYetPassed" file="/tmp/v11/tests/test_system_usecases.cpp" line="101" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.082" classname="UC10" />
+    <testcase name="E4_ModeratedOrReleasedMarkCannotBeChangedByLecturer" file="/tmp/v11/tests/test_system_usecases.cpp" line="106" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.085" classname="UC10" />
+    <testcase name="E5_DatabaseErrorLeavesNothingSaved" file="/tmp/v11/tests/test_system_usecases.cpp" line="113" status="run" result="completed" time="0.003" timestamp="2026-10-30T05:41:25.087" classname="UC10" />
+  </testsuite>
+  <testsuite name="UC14" tests="8" failures="0" disabled="0" skipped="0" errors="0" time="0.02" timestamp="2026-10-30T05:41:25.090">
+    <testcase name="Main_ApproveThenRelease" file="/tmp/v11/tests/test_system_usecases.cpp" line="124" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.090" classname="UC14" />
+    <testcase name="A1_AdjustAMark" file="/tmp/v11/tests/test_system_usecases.cpp" line="132" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.093" classname="UC14" />
+    <testcase name="A2_PartialRelease" file="/tmp/v11/tests/test_system_usecases.cpp" line="140" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.096" classname="UC14" />
+    <testcase name="A3_CorrectAReleasedMark" file="/tmp/v11/tests/test_system_usecases.cpp" line="152" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.098" classname="UC14" />
+    <testcase name="E1_UnmarkedSubmissionIsSkipped" file="/tmp/v11/tests/test_system_usecases.cpp" line="160" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.101" classname="UC14" />
+    <testcase name="E2_CourseOutsideDepartment" file="/tmp/v11/tests/test_system_usecases.cpp" line="168" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.103" classname="UC14" />
+    <testcase name="E3_ReasonMissingOrMarkOutOfRange" file="/tmp/v11/tests/test_system_usecases.cpp" line="173" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.106" classname="UC14" />
+    <testcase name="E4_BatchRolledBackOnDatabaseError" file="/tmp/v11/tests/test_system_usecases.cpp" line="179" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.108" classname="UC14" />
+  </testsuite>
+  <testsuite name="AccessControl" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0.003" timestamp="2026-10-30T05:41:25.111">
+    <testcase name="EachRoleIsLimitedToItsOwnFunctions" file="/tmp/v11/tests/test_system_usecases.cpp" line="190" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.111" classname="AccessControl" />
+    <testcase name="DeactivatedUserCannotPerformActions" file="/tmp/v11/tests/test_system_usecases.cpp" line="199" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.112" classname="AccessControl" />
+  </testsuite>
+  <testsuite name="CR1" tests="10" failures="0" disabled="0" skipped="0" errors="0" time="0.021" timestamp="2026-10-30T05:41:25.114">
+    <testcase name="ClassExtensionGivesEveryEnrolledStudentTheNewDeadline" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="9" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.114" classname="CR1" />
+    <testcase name="NeverShortensALaterIndividualExtension" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="22" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.117" classname="CR1" />
+    <testcase name="ExtendsAnEarlierIndividualExtension" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="33" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.119" classname="CR1" />
+    <testcase name="ClassExtensionRemovesThePenaltyWhenMarking" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="41" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.121" classname="CR1" />
+    <testcase name="ValidationAndAccessRules" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="50" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.123" classname="CR1" />
+    <testcase name="ClassExtensionIsAllOrNothing" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="68" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.125" classname="CR1" />
+    <testcase name="StudentsSeeTheirExtensionOnTheAssignmentList" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="77" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.127" classname="CR1" />
+    <testcase name="ConsoleLecturerGrantsAClassExtensionAndStudentsSeeIt" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="99" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.129" classname="CR1" />
+    <testcase name="ConsoleShowsNoExtensionTextWhenThereIsNone" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="109" status="run" result="completed" time="0.001" timestamp="2026-10-30T05:41:25.132" classname="CR1" />
+    <testcase name="ConsoleReportsStudentsWhoKeepALaterExtension" file="/tmp/v11/tests/test_cr1_class_extension.cpp" line="115" status="run" result="completed" time="0.002" timestamp="2026-10-30T05:41:25.134" classname="CR1" />
+  </testsuite>
+  <testsuite name="Concurrency" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0.168" timestamp="2026-10-30T05:41:25.136">
+    <testcase name="FiveSessionsWriteToOneDatabaseFileWithoutCorruption" file="/tmp/v11/tests/test_concurrency.cpp" line="10" status="run" result="completed" time="0.168" timestamp="2026-10-30T05:41:25.136" classname="Concurrency" />
+  </testsuite>
+</testsuites>

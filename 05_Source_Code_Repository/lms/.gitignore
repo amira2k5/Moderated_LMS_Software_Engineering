@@ -1,0 +1,6 @@
+build/
+build-cov/
+lms.db
+lms_files/
+*.db-journal
+coverage/

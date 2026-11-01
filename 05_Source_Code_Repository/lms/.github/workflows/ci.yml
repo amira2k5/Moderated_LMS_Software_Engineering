@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libsqlite3-dev libsodium-dev libgtest-dev
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build -j 2
+      - name: Run all tests
+        run: ctest --test-dir build --output-on-failure
+
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libsqlite3-dev libsodium-dev libgtest-dev cppcheck gcovr
+      - name: Static analysis (must report nothing)
+        run: >
+          cppcheck --enable=warning,style,performance,portability --inconclusive --std=c++17
+          --suppress=missingIncludeSystem --suppress=unusedFunction --error-exitcode=1 -I src -q src
+      - name: Build with coverage
+        run: |
+          cmake -S . -B build-cov -DCMAKE_BUILD_TYPE=Debug -DLMS_COVERAGE=ON
+          cmake --build build-cov -j 2
+      - name: Run tests
+        run: ./build-cov/lms_tests
+      - name: Coverage of the business-logic layer (at least 70%)
+        run: >
+          gcovr -r . build-cov --filter src/domain.cpp --filter src/services.cpp --filter src/common.cpp
+          --fail-under-line 70 --txt --html-details coverage.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage*.html

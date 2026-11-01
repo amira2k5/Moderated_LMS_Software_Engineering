@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Moderated LMS: Project Management Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f7f9;--ink:#1b2430;--mute:#5b6676;--line:#d5dae2;--card:#fff;--bar:#5578a8;--crit:#b3243b;--ms:#1b2430;--hi:#fbe3e6;--mid:#fdf1d8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151c;--ink:#e6eaf0;--mute:#98a3b3;--line:#2b3441;--card:#171d26;--bar:#7da0d1;--crit:#ef6a80;--ms:#e6eaf0;--hi:#3a1c24;--mid:#33290f}}
+:root[data-theme="dark"]{--bg:#10151c;--ink:#e6eaf0;--mute:#98a3b3;--line:#2b3441;--card:#171d26;--bar:#7da0d1;--crit:#ef6a80;--ms:#e6eaf0;--hi:#3a1c24;--mid:#33290f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:28px 18px 60px}
+h1,h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;line-height:1.25}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:21px;margin:42px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:16px;margin:22px 0 6px}
+p{max-width:70ch}.sub{color:var(--mute);margin:0 0 8px}
+.wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:var(--bg)}tr:last-child td{border-bottom:0}
+.hi{background:var(--hi)}.mid{background:var(--mid)}
+ul.wbs,ul.wbs ul{list-style:none;margin:2px 0;padding-left:18px}ul.wbs{padding-left:0}
+ul.wbs>li{margin:8px 0;font-weight:600}ul.wbs ul li{font-weight:400;color:var(--ink)}
+ul.wbs b{color:var(--mute);font-weight:400;margin-right:6px}
+svg{display:block;min-width:740px;font-family:inherit}
+.key{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--mute);margin:8px 0}
+.key i{display:inline-block;width:14px;height:8px;margin-right:6px;border-radius:2px}
+.note{background:var(--card);border-left:3px solid var(--crit);padding:10px 14px;margin:16px 0;max-width:70ch}
+</style>
+</head>
+<body>
+<main>
+<h1>Moderated Learning Management System</h1>
+<p class="sub">Project management plan (Phase 1). Waterfall, 7 weeks, one developer.</p>
+<p>This plan covers the feasibility study, work breakdown structure, schedule and risk register. Figures marked <em>assumed</em> are my planning assumptions: replace them with your own before you submit.</p>
+
+<h2>1. Feasibility study</h2>
+<div class="wrap"><table>
+<tr><th>Dimension</th><th>Assessment</th><th>Verdict</th></tr>
+<tr><td>Technical</td><td>C++17, SQLite, CMake, GoogleTest and libsodium are mature, free and run offline on old hardware. 800 students means a few tens of thousands of rows, which SQLite handles easily. The main risk is developer experience with C++ and the build tooling, not the technology.</td><td>Feasible</td></tr>
+<tr><td>Operational</td><td>Teachers are not IT experts, so the interface must be simple. A menu-driven console application with role-specific menus meets the need and runs on old machines. A desktop GUI is deferred (Won't have in v1.0). Training is covered by one manual per role.</td><td>Feasible, with simple UI</td></tr>
+<tr><td>Economic</td><td>No licence cost: SQLite is public domain, libsodium is ISC, GoogleTest is BSD-3. It runs on the existing school computer. Effort is about 245 hours (assumed 35 h/week for 7 weeks). Ongoing cost is low: backups and occasional updates.</td><td>Feasible</td></tr>
+<tr><td>Legal</td><td>The system holds learners' personal data and assessment records, so data protection law applies (confirm which law governs your school). Mitigations: store only the data needed, enforce role-based access, hash passwords, keep an audit log of mark changes. Dependency licences permit use in a school.</td><td>Feasible, with controls</td></tr>
+<tr><td>Schedule</td><td>The 7-week deadline is fixed and the phases overlap in weeks 2, 4 and 5. Gate 1 (end of week 2) and Gate 2 (end of week 3) leave little slack. The critical path has about 0.1 weeks of buffer at each gate.</td><td class="mid">Tight</td></tr>
+</table></div>
+<div class="note"><b>Recommendation: proceed.</b> The project is technically and economically sound and the main exposure is time. Proceed on three conditions: (1) a console UI in v1.0, (2) scope held to the MoSCoW Must and Should items, (3) risk register reviewed at every gate. Out-of-scope items from the case study stay out.</div>
+
+<h2>2. Work breakdown structure</h2>
+<ul class="wbs">
+<li><b>1</b>Planning and management
+<ul><li><b>1.1</b>Feasibility study</li><li><b>1.2</b>WBS and Gantt chart</li><li><b>1.3</b>Risk register (updated at each gate)</li></ul></li>
+<li><b>2</b>Requirements engineering
+<ul><li><b>2.1</b>Stakeholder analysis and conflict resolution</li><li><b>2.2</b>Software requirements specification</li><li><b>2.3</b>Use case model and three specifications</li></ul></li>
+<li><b>3</b>System design
+<ul><li><b>3.1</b>Architecture and component diagram</li><li><b>3.2</b>Class diagram, patterns, SOLID rationale</li><li><b>3.3</b>State, activity and sequence diagrams</li><li><b>3.4</b>ERD, data dictionary, SQL schema</li></ul></li>
+<li><b>4</b>Implementation
+<ul><li><b>4.1</b>Repository, CMake and CI setup</li><li><b>4.2</b>Data-access layer, schema, password hashing</li><li><b>4.3</b>Domain model: users, submissions, late-penalty strategy</li><li><b>4.4</b>Services: moderation, audit log, validation, console UI</li></ul></li>
+<li><b>5</b>Verification and validation
+<ul><li><b>5.1</b>Test plan (V-Model, EP and BVA)</li><li><b>5.2</b>Unit and integration tests with coverage</li><li><b>5.3</b>System and acceptance tests, defect log</li></ul></li>
+<li><b>6</b>Configuration management and QA
+<ul><li><b>6.1</b>Branching strategy, tagged releases</li><li><b>6.2</b>Static analysis, metrics, code review</li></ul></li>
+<li><b>7</b>Deployment
+<ul><li><b>7.1</b>Deployment diagram, installation guide, user manuals, release notes, tag v1.0</li></ul></li>
+<li><b>8</b>Maintenance (CR1)
+<ul><li><b>8.1</b>Classification and impact analysis</li><li><b>8.2</b>Implement v1.1</li><li><b>8.3</b>Regression testing</li></ul></li>
+<li><b>9</b>Completion
+<ul><li><b>9.1</b>Professional, legal and ethical issues</li><li><b>9.2</b>Final report, traceability matrix, viva preparation</li></ul></li>
+</ul>
+
+<h2>3. Schedule</h2>
+<p>The Gantt chart shows tasks against weeks 1 to 7. Arrows are finish-to-start dependencies. Diamonds are milestones (phase gates and the v1.0 release). Red items are on the critical path.</p>
+<div class="key"><span><i style="background:var(--crit)"></i>Critical path</span><span><i style="background:var(--bar)"></i>Task with slack</span><span>&#9670; Milestone</span></div>
+<div class="wrap" id="gantt"></div>
+<h3>Critical path</h3>
+<p>Stakeholder analysis, SRS, use case model, Gate 1, architecture, class diagram and design document, Gate 2, repository and CI setup, domain model, unit and integration tests, system and acceptance tests, Gate 3 and v1.0, CR1 analysis, CR1 implementation, regression tests, final report. Any slip here moves the final date. The data-access layer, services and UI, test plan, static analysis and documentation all have slack of 0.1 to 0.7 weeks.</p>
+<p>Milestones: <b>Gate 1</b> end of week 2 (SRS and use cases baselined), <b>Gate 2</b> end of week 3 (design approved, implementation may start), <b>Gate 3</b> end of week 6 (tests passed, v1.0 tagged), <b>v1.1</b> end of week 7.</p>
+
+<h2>4. Risk register</h2>
+<p>Likelihood (L) and impact (I) are scored 1 to 5. Exposure = L &times; I. Red rows are 15 or above, amber rows 10 to 14. Add a status column and re-score at Gates 1, 2 and 3; the updated register goes in Appendix 14.</p>
+<div class="wrap"><table>
+<tr><th>ID</th><th>Risk</th><th>Type</th><th>L</th><th>I</th><th>Exp.</th><th>Mitigation</th><th>Owner</th></tr>
+<tr class="hi"><td>R1</td><td>Schedule overruns because the 7 weeks are fixed and phases overlap</td><td>Project</td><td>4</td><td>5</td><td>20</td><td>MoSCoW prioritisation; build Must items first; weekly progress check against the Gantt; keep gate buffers</td><td>Developer</td></tr>
+<tr class="hi"><td>R2</td><td>Stakeholder conflicts left unresolved or resolved inconsistently</td><td>People</td><td>4</td><td>4</td><td>16</td><td>Record each resolution with its rationale; review with the supervisor at Gate 1; baseline the SRS</td><td>Developer</td></tr>
+<tr class="mid"><td>R3</td><td>Skill gaps in C++17, SQLite or CI cause rework</td><td>Technical</td><td>3</td><td>4</td><td>12</td><td>Practise on small throwaway exercises during weeks 1 to 3; use well-documented libraries; ask for early code review</td><td>Developer</td></tr>
+<tr class="mid"><td>R4</td><td>Database file lost or corrupted on a single computer</td><td>Technical</td><td>2</td><td>5</td><td>10</td><td>Use transactions; scheduled backup copies; document restore steps in the installation guide</td><td>IT officer</td></tr>
+<tr><td>R5</td><td>Stakeholders unavailable for requirement reviews</td><td>People</td><td>3</td><td>3</td><td>9</td><td>Book interviews in week 1; use the supervisor as proxy; state assumptions explicitly</td><td>Developer</td></tr>
+<tr><td>R6</td><td>Scope creep, for example GUI or notifications beyond the SRS</td><td>Project</td><td>3</td><td>3</td><td>9</td><td>Change control: new items are logged and classed Won't unless swapped for a Must; out-of-scope list from the case study</td><td>Developer</td></tr>
+<tr><td>R7</td><td>Hashing library does not build on old school machines</td><td>Technical</td><td>2</td><td>4</td><td>8</td><td>Test the build early in CI; keep the hashing code behind an interface so the library can be swapped</td><td>Developer</td></tr>
+<tr><td>R8</td><td>System is slow with 800 students stored</td><td>Technical</td><td>2</td><td>3</td><td>6</td><td>Index key columns; add a performance test with 800 seeded users and a login target of 2 seconds</td><td>Developer</td></tr>
+</table></div>
+</main>
+
+<script>
+const T=[
+["A","Feasibility study",0,.4,[]],["B","WBS and Gantt chart",.4,.8,["A"]],["C","Risk register",.4,.8,["A"]],
+["D","Stakeholder analysis",0,.6,[]],["E","SRS",.6,1.2,["D"]],["F","Use case model",1.2,1.7,["E"]],
+["G1","Gate 1",1.8,1.8,["F"]],
+["H","Architecture",1.8,2.2,["G1"]],["I","Class diagram and patterns",2.2,3,["H"]],["J","Behavioural models",2.2,2.8,["H"]],["K","Database design",2.2,2.8,["H"]],
+["G2","Gate 2",3,3,["I","J","K"]],
+["L","Repository, CMake, CI",3,3.3,["G2"]],["M","Data-access layer, hashing",3.3,4,["L"]],["N","Domain model and patterns",3.3,4.2,["L"]],
+["O","Services, audit log, UI",4.2,5,["M","N"]],["P","Test plan",3.3,4,["L"]],["Q","Unit and integration tests",4.2,5.2,["M","N"]],
+["R","System and acceptance tests",5.2,6,["O","Q"]],["S","Static analysis, metrics, review",5,5.6,["O"]],["T","Install guide, manuals, deployment",5.3,5.9,["O"]],
+["G3","Gate 3 and v1.0 tag",6,6,["R","S","T"]],
+["U","CR1 impact analysis",6,6.3,["G3"]],["V","CR1 implementation (v1.1)",6.3,6.55,["U"]],["W","Regression tests",6.55,6.8,["V"]],
+["X","Ethics and legal section",6,6.5,["G3"]],["Y","Final report and viva prep",6.8,7,["W","X"]]];
+const CR=new Set("D E F G1 H I G2 L N Q R G3 U V W Y".split(" "));
+const X0=250,PW=70,RH=22,TOP=28,x=t=>X0+t*PW,y=i=>TOP+i*RH,idx={};
+T.forEach((r,i)=>idx[r[0]]=i);
+let s=`<svg viewBox="0 0 ${X0+7*PW+10} ${TOP+T.length*RH+8}" role="img" aria-label="Gantt chart of the 7-week project schedule">`;
+for(let w=0;w<=7;w++){s+=`<line x1="${x(w)}" x2="${x(w)}" y1="${TOP-6}" y2="${TOP+T.length*RH}" stroke="var(--line)"/>`;
+if(w<7)s+=`<text x="${x(w)+PW/2}" y="16" text-anchor="middle" font-size="12" fill="var(--mute)">Week ${w+1}</text>`;}
+T.forEach((r,i)=>{const [id,n,a,b,d]=r,c=CR.has(id),ms=a===b,cy=y(i)+RH/2;
+s+=`<text x="8" y="${cy+4}" font-size="12" fill="var(--ink)" font-weight="${ms?600:400}">${n}</text>`;
+d.forEach(p=>{const j=idx[p],pe=T[j][3],x1=x(pe),x2=x(a),y1=y(j)+RH/2,cc=c&&CR.has(p);
+s+=`<path d="M${x1} ${y1} h4 V${cy} H${x2}" fill="none" stroke="${cc?'var(--crit)':'var(--mute)'}" stroke-width="1" opacity=".7"/>`;});
+if(ms)s+=`<path d="M${x(a)} ${cy-7} l7 7 l-7 7 l-7 -7z" fill="var(--ms)"/>`;
+else s+=`<rect x="${x(a)}" y="${y(i)+4}" width="${(b-a)*PW}" height="${RH-8}" rx="2" fill="${c?'var(--crit)':'var(--bar)'}"/>`;});
+document.getElementById("gantt").innerHTML=s+"</svg>";
+</script>
+</body>
+</html>

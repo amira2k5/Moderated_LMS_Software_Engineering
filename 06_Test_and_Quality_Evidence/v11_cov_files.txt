@@ -1,0 +1,12 @@
+src/common.cpp                                35      35   100%
+src/common.hpp                                 4       4   100%
+src/data.cpp                                 420     417    99%   21,158,167
+src/data.hpp                                  16      16   100%
+src/domain.cpp                                86      81    94%   16,32,42,57,99
+src/domain.hpp                                17      17   100%
+src/security.cpp                              11      10    90%   18
+src/security.hpp                               1       1   100%
+src/services.cpp                             433     430    99%   224,234,306
+src/services.hpp                              20      20   100%
+src/ui.cpp                                   292     204    69%   42-48,50-52,73-75,97,101-102,205-206,215,220-247,260-278,286-292,315,325-332,335-340
+src/ui.hpp                                     2       2   100%

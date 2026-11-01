@@ -1,0 +1,21 @@
+digraph D{rankdir=TB;nodesep=0.35;ranksep=0.55;fontname="Helvetica";compound=true;
+node[fontname="Helvetica",fontsize=11,shape=box,style="filled",fillcolor="#F3F6FA",color="#44546A"];
+edge[fontname="Helvetica",fontsize=9,color="#44546A"];
+subgraph cluster_pc{label="«device» School computer (Ubuntu 22.04 or later; Windows 10 with WSL2)";style=rounded;fontsize=12;color="#44546A";
+ subgraph cluster_ee{label="«execution environment» Terminal (keyboard and screen)";style=rounded;color="#7A8AA0";
+  lms[label="«artifact»\nlms (program, v1.1.0)\nlayered C++17 application",shape=component,fillcolor="#D9E2F0"];}
+ sqlite[label="«library»\nlibsqlite3",shape=component];
+ sodium[label="«library»\nlibsodium",shape=component];
+ db[label="«artifact»\nlms.db\n(SQLite database)",shape=cylinder,fillcolor="#FBEFD5"];
+ files[label="«artifact»\nlms_files/\n(submitted work)",shape=folder,fillcolor="#FBEFD5"];
+}
+subgraph cluster_bk{label="«device» USB drive or second computer";style=rounded;fontsize=12;color="#44546A";
+ bk[label="«artifact»\nbackup-YYYY-MM-DD.db\nand copy of lms_files/",shape=cylinder,fillcolor="#FBEFD5"];}
+subgraph cluster_lan{label="Optional: «device» shared network folder (local network, no internet)";style="rounded,dashed";fontsize=12;color="#7A8AA0";
+ shared[label="lms.db and lms_files/\nshared by up to 5 sessions",shape=folder];
+ other[label="«device»\nstaff computer\nruns its own copy of lms",shape=box3d];}
+lms->sqlite[label="«use»"];lms->sodium[label="«use»"];
+lms->db[label="read and write"];lms->files[label="store submitted files"];
+lms->bk[label="Back up the database (weekly)",style=dashed];
+other->shared[label="read and write (LAN)",style=dashed];bk->other[style=invis];
+}

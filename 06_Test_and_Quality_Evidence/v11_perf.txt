@@ -1,0 +1,2 @@
+[ perf ] class extension (800 students) 32.3993 ms
+[ perf ] login 77.6389 ms, list(150) 0.542299 ms, save mark 2.40825 ms

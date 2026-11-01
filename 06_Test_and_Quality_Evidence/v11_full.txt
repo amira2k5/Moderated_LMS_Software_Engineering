@@ -1,0 +1,273 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 104 tests from 19 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from Penalty
+[ RUN      ] Penalty.BoundaryValuesForDeadlineAndDays
+[       OK ] Penalty.BoundaryValuesForDeadlineAndDays (0 ms)
+[ RUN      ] Penalty.MarkBoundariesAndFloorAtZero
+[       OK ] Penalty.MarkBoundariesAndFloorAtZero (0 ms)
+[ RUN      ] Penalty.RoundsHalfUpToTwoDecimals
+[       OK ] Penalty.RoundsHalfUpToTwoDecimals (0 ms)
+[ RUN      ] Penalty.PolicyIsReplaceable
+[       OK ] Penalty.PolicyIsReplaceable (0 ms)
+[----------] 4 tests from Penalty (0 ms total)
+
+[----------] 4 tests from Domain
+[ RUN      ] Domain.PermissionMatrixPerRole
+[       OK ] Domain.PermissionMatrixPerRole (0 ms)
+[ RUN      ] Domain.UserFactoryBuildsEachRoleAndValidates
+[       OK ] Domain.UserFactoryBuildsEachRoleAndValidates (0 ms)
+[ RUN      ] Domain.EnumerationsRoundTripThroughText
+[       OK ] Domain.EnumerationsRoundTripThroughText (0 ms)
+[ RUN      ] Domain.EffectiveDeadlineAndCurrentVersion
+[       OK ] Domain.EffectiveDeadlineAndCurrentVersion (0 ms)
+[----------] 4 tests from Domain (0 ms total)
+
+[----------] 1 test from Common
+[ RUN      ] Common.TimeConversionAndTrim
+[       OK ] Common.TimeConversionAndTrim (0 ms)
+[----------] 1 test from Common (0 ms total)
+
+[----------] 9 tests from Data
+[ RUN      ] Data.ForeignKeysAreEnforced
+[       OK ] Data.ForeignKeysAreEnforced (2 ms)
+[ RUN      ] Data.AuditLogIsAppendOnly
+[       OK ] Data.AuditLogIsAppendOnly (3 ms)
+[ RUN      ] Data.ConstraintsRejectInvalidRows
+[       OK ] Data.ConstraintsRejectInvalidRows (3 ms)
+[ RUN      ] Data.QueriesAreParameterisedAgainstInjection
+[       OK ] Data.QueriesAreParameterisedAgainstInjection (2 ms)
+[ RUN      ] Data.UnitOfWorkRollsBackAndCommitsAndNests
+[       OK ] Data.UnitOfWorkRollsBackAndCommitsAndNests (1 ms)
+[ RUN      ] Data.RepositoriesRoundTripEntities
+[       OK ] Data.RepositoriesRoundTripEntities (2 ms)
+[ RUN      ] Data.ExtensionIsUpsertedPerStudentAndAssignment
+[       OK ] Data.ExtensionIsUpsertedPerStudentAndAssignment (2 ms)
+[ RUN      ] Data.AuditFilterByDepartmentUserAndTime
+[       OK ] Data.AuditFilterByDepartmentUserAndTime (4 ms)
+[ RUN      ] Data.BackupCreatesAnOpenableCopy
+[       OK ] Data.BackupCreatesAnOpenableCopy (4 ms)
+[----------] 9 tests from Data (27 ms total)
+
+[----------] 7 tests from Auth
+[ RUN      ] Auth.LoginSucceedsAndIsCaseInsensitiveOnUsername
+[       OK ] Auth.LoginSucceedsAndIsCaseInsensitiveOnUsername (2 ms)
+[ RUN      ] Auth.WrongPasswordAndUnknownUserGiveTheSameMessage
+[       OK ] Auth.WrongPasswordAndUnknownUserGiveTheSameMessage (3 ms)
+[ RUN      ] Auth.DeactivatedAccountCannotLogIn
+[       OK ] Auth.DeactivatedAccountCannotLogIn (3 ms)
+[ RUN      ] Auth.AccountLocksAfterFiveFailuresAndUnlocksAfterFiveMinutes
+[       OK ] Auth.AccountLocksAfterFiveFailuresAndUnlocksAfterFiveMinutes (4 ms)
+[ RUN      ] Auth.SuccessfulLoginResetsTheFailureCounter
+[       OK ] Auth.SuccessfulLoginResetsTheFailureCounter (3 ms)
+[ RUN      ] Auth.PasswordsAreStoredAsSaltedHashesOnly
+[       OK ] Auth.PasswordsAreStoredAsSaltedHashesOnly (1 ms)
+[ RUN      ] Auth.ChangePasswordChecksOldPasswordAndRules
+[       OK ] Auth.ChangePasswordChecksOldPasswordAndRules (2 ms)
+[----------] 7 tests from Auth (20 ms total)
+
+[----------] 3 tests from Admin
+[ RUN      ] Admin.CreateUserValidatesEveryField
+[       OK ] Admin.CreateUserValidatesEveryField (1 ms)
+[ RUN      ] Admin.HeadOfDepartmentRules
+[       OK ] Admin.HeadOfDepartmentRules (2 ms)
+[ RUN      ] Admin.DepartmentsCoursesEnrolmentsAndAssignments
+[       OK ] Admin.DepartmentsCoursesEnrolmentsAndAssignments (1 ms)
+[----------] 3 tests from Admin (6 ms total)
+
+[----------] 3 tests from AssignmentSvc
+[ RUN      ] AssignmentSvc.CreateAssignmentValidation
+[       OK ] AssignmentSvc.CreateAssignmentValidation (1 ms)
+[ RUN      ] AssignmentSvc.ExtensionRules
+[       OK ] AssignmentSvc.ExtensionRules (2 ms)
+[ RUN      ] AssignmentSvc.ListingsRespectRoles
+[       OK ] AssignmentSvc.ListingsRespectRoles (2 ms)
+[----------] 3 tests from AssignmentSvc (6 ms total)
+
+[----------] 8 tests from Submission
+[ RUN      ] Submission.OnTimeFirstSubmission
+[       OK ] Submission.OnTimeFirstSubmission (2 ms)
+[ RUN      ] Submission.DeadlineBoundaries
+[       OK ] Submission.DeadlineBoundaries (14 ms)
+[ RUN      ] Submission.ResubmissionBeforeDeadlineKeepsAllVersions
+[       OK ] Submission.ResubmissionBeforeDeadlineKeepsAllVersions (2 ms)
+[ RUN      ] Submission.CannotResubmitAfterDeadlineOrAfterLateOrAfterMarking
+[       OK ] Submission.CannotResubmitAfterDeadlineOrAfterLateOrAfterMarking (7 ms)
+[ RUN      ] Submission.OnlyEnrolledStudentsMaySubmit
+[       OK ] Submission.OnlyEnrolledStudentsMaySubmit (2 ms)
+[ RUN      ] Submission.InvalidFilesAreRejectedAndStoreNothing
+[       OK ] Submission.InvalidFilesAreRejectedAndStoreNothing (13 ms)
+[ RUN      ] Submission.ExtensionMovesTheEffectiveDeadline
+[       OK ] Submission.ExtensionMovesTheEffectiveDeadline (2 ms)
+[ RUN      ] Submission.DatabaseFailureLeavesNoPartialSubmission
+[       OK ] Submission.DatabaseFailureLeavesNoPartialSubmission (2 ms)
+[----------] 8 tests from Submission (47 ms total)
+
+[----------] 7 tests from Marking
+[ RUN      ] Marking.CannotMarkBeforeTheEffectiveDeadline
+[       OK ] Marking.CannotMarkBeforeTheEffectiveDeadline (2 ms)
+[ RUN      ] Marking.OnTimeMarkHasNoPenaltyAndWritesAnAuditEntry
+[       OK ] Marking.OnTimeMarkHasNoPenaltyAndWritesAnAuditEntry (2 ms)
+[ RUN      ] Marking.LatePenaltyIsApplied
+[       OK ] Marking.LatePenaltyIsApplied (10 ms)
+[ RUN      ] Marking.ExtensionRemovesThePenalty
+[       OK ] Marking.ExtensionRemovesThePenalty (2 ms)
+[ RUN      ] Marking.RejectsInvalidMarksFeedbackAndWrongPeople
+[       OK ] Marking.RejectsInvalidMarksFeedbackAndWrongPeople (2 ms)
+[ RUN      ] Marking.RemarkRequiresReasonAndIsAudited
+[       OK ] Marking.RemarkRequiresReasonAndIsAudited (2 ms)
+[ RUN      ] Marking.FailedAuditRollsBackTheMark
+[       OK ] Marking.FailedAuditRollsBackTheMark (2 ms)
+[----------] 7 tests from Marking (24 ms total)
+
+[----------] 8 tests from Moderation
+[ RUN      ] Moderation.ReviewIsLimitedToOwnDepartment
+[       OK ] Moderation.ReviewIsLimitedToOwnDepartment (2 ms)
+[ RUN      ] Moderation.StudentsNeverSeeUnreleasedMarks
+[       OK ] Moderation.StudentsNeverSeeUnreleasedMarks (2 ms)
+[ RUN      ] Moderation.AdjustMarkBeforeApprovalIsAuditedAndValidated
+[       OK ] Moderation.AdjustMarkBeforeApprovalIsAuditedAndValidated (2 ms)
+[ RUN      ] Moderation.ApproveAndReleaseBatchesSkipWrongStates
+[       OK ] Moderation.ApproveAndReleaseBatchesSkipWrongStates (2 ms)
+[ RUN      ] Moderation.ReleaseRequiresApprovalFirst
+[       OK ] Moderation.ReleaseRequiresApprovalFirst (2 ms)
+[ RUN      ] Moderation.BatchIsAllOrNothing
+[       OK ] Moderation.BatchIsAllOrNothing (2 ms)
+[ RUN      ] Moderation.CorrectionOfAReleasedMarkIsAuditedAndVisible
+[       OK ] Moderation.CorrectionOfAReleasedMarkIsAuditedAndVisible (2 ms)
+[ RUN      ] Moderation.AuditLogAccessIsRoleBased
+[       OK ] Moderation.AuditLogAccessIsRoleBased (2 ms)
+[----------] 8 tests from Moderation (20 ms total)
+
+[----------] 2 tests from Robustness
+[ RUN      ] Robustness.AtLeastFiftyInvalidInputsAreRejectedCleanly
+[       OK ] Robustness.AtLeastFiftyInvalidInputsAreRejectedCleanly (2 ms)
+[ RUN      ] Robustness.DatabaseFailureBecomesAnErrorNotACrash
+[       OK ] Robustness.DatabaseFailureBecomesAnErrorNotACrash (1 ms)
+[----------] 2 tests from Robustness (4 ms total)
+
+[----------] 1 test from Performance
+[ RUN      ] Performance.LoginListingAndSavingMeetTheTargetsWithEightHundredStudents
+[ perf ] class extension (800 students) 17.9806 ms
+[ perf ] login 79.2532 ms, list(150) 0.545981 ms, save mark 1.93025 ms
+[       OK ] Performance.LoginListingAndSavingMeetTheTargetsWithEightHundredStudents (216 ms)
+[----------] 1 test from Performance (216 ms total)
+
+[----------] 9 tests from Console
+[ RUN      ] Console.FailedLoginShowsAPlainMessageAndQuitWorks
+[       OK ] Console.FailedLoginShowsAPlainMessageAndQuitWorks (1 ms)
+[ RUN      ] Console.StudentSubmitsWork
+[       OK ] Console.StudentSubmitsWork (2 ms)
+[ RUN      ] Console.LateSubmissionWarnsAboutPenalty
+[       OK ] Console.LateSubmissionWarnsAboutPenalty (2 ms)
+[ RUN      ] Console.LecturerMarksAndHodModeratesAndReleases
+[       OK ] Console.LecturerMarksAndHodModeratesAndReleases (2 ms)
+[ RUN      ] Console.StudentSeesNothingBeforeRelease
+[       OK ] Console.StudentSeesNothingBeforeRelease (2 ms)
+[ RUN      ] Console.AdministratorCreatesAnAccount
+[       OK ] Console.AdministratorCreatesAnAccount (1 ms)
+[ RUN      ] Console.InvalidInputIsExplainedAndDoesNotCrash
+[       OK ] Console.InvalidInputIsExplainedAndDoesNotCrash (2 ms)
+[ RUN      ] Console.EndOfInputInsideASessionEndsCleanly
+[       OK ] Console.EndOfInputInsideASessionEndsCleanly (2 ms)
+[ RUN      ] Console.ChangePasswordAndAuditLogScreens
+[       OK ] Console.ChangePasswordAndAuditLogScreens (2 ms)
+[----------] 9 tests from Console (21 ms total)
+
+[----------] 9 tests from UC18
+[ RUN      ] UC18.Main_OnTimeSubmission
+[       OK ] UC18.Main_OnTimeSubmission (2 ms)
+[ RUN      ] UC18.A1_ResubmissionBeforeDeadline
+[       OK ] UC18.A1_ResubmissionBeforeDeadline (2 ms)
+[ RUN      ] UC18.A2_LateSubmissionIsAcceptedAndFlagged
+[       OK ] UC18.A2_LateSubmissionIsAcceptedAndFlagged (2 ms)
+[ RUN      ] UC18.A2_SubmissionAfterSeventyTwoHoursIsStillAccepted
+[       OK ] UC18.A2_SubmissionAfterSeventyTwoHoursIsStillAccepted (2 ms)
+[ RUN      ] UC18.E1_StudentNotEnrolled
+[       OK ] UC18.E1_StudentNotEnrolled (2 ms)
+[ RUN      ] UC18.E2_InvalidFile
+[       OK ] UC18.E2_InvalidFile (1 ms)
+[ RUN      ] UC18.E3_ResubmissionOfLateWorkRefused
+[       OK ] UC18.E3_ResubmissionOfLateWorkRefused (2 ms)
+[ RUN      ] UC18.E4_SubmissionAfterMarkingRefused
+[       OK ] UC18.E4_SubmissionAfterMarkingRefused (2 ms)
+[ RUN      ] UC18.E5_StorageErrorLeavesNoPartialVersion
+[       OK ] UC18.E5_StorageErrorLeavesNoPartialVersion (2 ms)
+[----------] 9 tests from UC18 (20 ms total)
+
+[----------] 8 tests from UC10
+[ RUN      ] UC10.Main_MarkAfterDeadlineHiddenFromStudent
+[       OK ] UC10.Main_MarkAfterDeadlineHiddenFromStudent (2 ms)
+[ RUN      ] UC10.Main_LatePenaltyShownAndApplied
+[       OK ] UC10.Main_LatePenaltyShownAndApplied (2 ms)
+[ RUN      ] UC10.A1_RemarkWithReason
+[       OK ] UC10.A1_RemarkWithReason (2 ms)
+[ RUN      ] UC10.E1_MarkOutsideRange
+[       OK ] UC10.E1_MarkOutsideRange (2 ms)
+[ RUN      ] UC10.E2_FeedbackMissing
+[       OK ] UC10.E2_FeedbackMissing (2 ms)
+[ RUN      ] UC10.E3_DeadlineNotYetPassed
+[       OK ] UC10.E3_DeadlineNotYetPassed (2 ms)
+[ RUN      ] UC10.E4_ModeratedOrReleasedMarkCannotBeChangedByLecturer
+[       OK ] UC10.E4_ModeratedOrReleasedMarkCannotBeChangedByLecturer (2 ms)
+[ RUN      ] UC10.E5_DatabaseErrorLeavesNothingSaved
+[       OK ] UC10.E5_DatabaseErrorLeavesNothingSaved (3 ms)
+[----------] 8 tests from UC10 (19 ms total)
+
+[----------] 8 tests from UC14
+[ RUN      ] UC14.Main_ApproveThenRelease
+[       OK ] UC14.Main_ApproveThenRelease (2 ms)
+[ RUN      ] UC14.A1_AdjustAMark
+[       OK ] UC14.A1_AdjustAMark (2 ms)
+[ RUN      ] UC14.A2_PartialRelease
+[       OK ] UC14.A2_PartialRelease (2 ms)
+[ RUN      ] UC14.A3_CorrectAReleasedMark
+[       OK ] UC14.A3_CorrectAReleasedMark (2 ms)
+[ RUN      ] UC14.E1_UnmarkedSubmissionIsSkipped
+[       OK ] UC14.E1_UnmarkedSubmissionIsSkipped (2 ms)
+[ RUN      ] UC14.E2_CourseOutsideDepartment
+[       OK ] UC14.E2_CourseOutsideDepartment (2 ms)
+[ RUN      ] UC14.E3_ReasonMissingOrMarkOutOfRange
+[       OK ] UC14.E3_ReasonMissingOrMarkOutOfRange (2 ms)
+[ RUN      ] UC14.E4_BatchRolledBackOnDatabaseError
+[       OK ] UC14.E4_BatchRolledBackOnDatabaseError (2 ms)
+[----------] 8 tests from UC14 (20 ms total)
+
+[----------] 2 tests from AccessControl
+[ RUN      ] AccessControl.EachRoleIsLimitedToItsOwnFunctions
+[       OK ] AccessControl.EachRoleIsLimitedToItsOwnFunctions (1 ms)
+[ RUN      ] AccessControl.DeactivatedUserCannotPerformActions
+[       OK ] AccessControl.DeactivatedUserCannotPerformActions (1 ms)
+[----------] 2 tests from AccessControl (3 ms total)
+
+[----------] 10 tests from CR1
+[ RUN      ] CR1.ClassExtensionGivesEveryEnrolledStudentTheNewDeadline
+[       OK ] CR1.ClassExtensionGivesEveryEnrolledStudentTheNewDeadline (2 ms)
+[ RUN      ] CR1.NeverShortensALaterIndividualExtension
+[       OK ] CR1.NeverShortensALaterIndividualExtension (1 ms)
+[ RUN      ] CR1.ExtendsAnEarlierIndividualExtension
+[       OK ] CR1.ExtendsAnEarlierIndividualExtension (1 ms)
+[ RUN      ] CR1.ClassExtensionRemovesThePenaltyWhenMarking
+[       OK ] CR1.ClassExtensionRemovesThePenaltyWhenMarking (2 ms)
+[ RUN      ] CR1.ValidationAndAccessRules
+[       OK ] CR1.ValidationAndAccessRules (1 ms)
+[ RUN      ] CR1.ClassExtensionIsAllOrNothing
+[       OK ] CR1.ClassExtensionIsAllOrNothing (1 ms)
+[ RUN      ] CR1.StudentsSeeTheirExtensionOnTheAssignmentList
+[       OK ] CR1.StudentsSeeTheirExtensionOnTheAssignmentList (2 ms)
+[ RUN      ] CR1.ConsoleLecturerGrantsAClassExtensionAndStudentsSeeIt
+[       OK ] CR1.ConsoleLecturerGrantsAClassExtensionAndStudentsSeeIt (2 ms)
+[ RUN      ] CR1.ConsoleShowsNoExtensionTextWhenThereIsNone
+[       OK ] CR1.ConsoleShowsNoExtensionTextWhenThereIsNone (1 ms)
+[ RUN      ] CR1.ConsoleReportsStudentsWhoKeepALaterExtension
+[       OK ] CR1.ConsoleReportsStudentsWhoKeepALaterExtension (2 ms)
+[----------] 10 tests from CR1 (21 ms total)
+
+[----------] 1 test from Concurrency
+[ RUN      ] Concurrency.FiveSessionsWriteToOneDatabaseFileWithoutCorruption
+[       OK ] Concurrency.FiveSessionsWriteToOneDatabaseFileWithoutCorruption (168 ms)
+[----------] 1 test from Concurrency (168 ms total)
+
+[----------] Global test environment tear-down
+[==========] 104 tests from 19 test suites ran. (650 ms total)
+[  PASSED  ] 104 tests.
